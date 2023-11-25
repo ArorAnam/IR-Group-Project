@@ -13,5 +13,73 @@ Others taken into consideration:
  */
 
 public class FbisModel {
+    String docno, text;
+    // Header, Text contain majorly all the tags
+    String txt5, date1, fig, header, f;
+    String[] h = new String[8];
+
+    public String getFig() {
+        return fig;
+    }
+
+    public void setFig(String fig) {
+        this.fig = fig;
+    }
+
+    public String[] getH() {
+        return h;
+    }
+
+    public void setH(String[] h) {
+        this.h = h;
+    }
+
+    public String getDocno() {
+        return docno;
+    }
+
+    public void setDocno(String docno) {
+        this.docno = docno;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getTxt5() {
+        return txt5;
+    }
+
+    public void setTxt5(String txt5) {
+        this.txt5 = txt5;
+    }
+
+    public String getDate1() {
+        return date1;
+    }
+
+    public void setDate1(String date1) {
+        this.date1 = date1;
+    }
+
+    public String getHeader() {
+        return header;
+    }
+
+    public void setHeader(String header) {
+        this.header = header;
+    }
+
+    public String getF() {
+        return f;
+    }
+
+    public void setF(String f) {
+        this.f = f;
+    }
 
 }
