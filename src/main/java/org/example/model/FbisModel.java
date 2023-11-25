@@ -26,12 +26,12 @@ public class FbisModel {
         this.fig = fig;
     }
 
-    public String[] getH() {
-        return h;
+    public String getH(int i) {
+        return this.h[i];
     }
 
-    public void setH(String[] h) {
-        this.h = h;
+    public void setH(String h, int i) {
+        this.h[i] = h;
     }
 
     public String getDocno() {
