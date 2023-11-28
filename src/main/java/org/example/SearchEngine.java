@@ -45,12 +45,13 @@ public class SearchEngine {
         Directory indexDirectory = FSDirectory.open(Paths.get("index/"));
         DirectoryReader ireader = DirectoryReader.open(indexDirectory);
         IndexSearcher isearcher = new IndexSearcher(ireader);
+        isearcher.setSimilarity(similarity);
         File outputFile = new File("output/", "result.txt");
         PrintWriter writer = new PrintWriter(outputFile, String.valueOf(StandardCharsets.UTF_8));
         HashMap<String, Float> boostMap = new HashMap<String, Float>();
         boostMap.put("title", 0.08f);
         boostMap.put("allContent", 0.92f);
-        MultiFieldQueryParser queryParser = new MultiFieldQueryParser(new String[]{"title", "allContent"}, analyzer, boostMap);
+        MultiFieldQueryParser queryParser = new MultiFieldQueryParser(new String[]{"title", "content"}, analyzer, boostMap);
         for(TopicModel topic : topics) {
             BooleanQuery.Builder booleanQuery = new BooleanQuery.Builder();
             Query titleQuery = queryParser.parse(QueryParser.escape(topic.getTitle().trim()));
