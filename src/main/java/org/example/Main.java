@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        // Get Topics
+        //Get Topics
         //TopicParser temp1 = new TopicParser();
         //System.out.println(temp1.loadTopics());
 
@@ -27,13 +27,18 @@ public class Main {
         //ArrayList<Document> docs = fr9rdocs.getDocuments();
         //System.out.println(docs.get(1));
 
-        // Get fbis models
+        //Get fbis models
         //FbisParser temp2 = new FbisParser();
+//        for (int i = 1 ; i <= 8; i++) {
+//            String mop = temp2.getData().get(1).getH(i-1);
+//            if (mop != null)
+//                System.out.println(mop);
+//        }
         //System.out.println(temp2.getData());
 
         //get fbis documents
-        //FbisIndexer temp3 = new FbisIndexer();
-        //ArrayList<Document> fbisdocs = temp3.getDocuments();
-        //System.out.println(fbisdocs.get(1));
+        FbisIndexer temp3 = new FbisIndexer();
+        ArrayList<Document> fbisdocs = temp3.getDocuments();
+        System.out.println(fbisdocs.get(1));
     }
 }

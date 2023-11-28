@@ -13,29 +13,37 @@ Others taken into consideration:
  */
 
 public class FbisModel {
-    String docno, text;
-    // Header, Text contain majorly all the tags
+    String docno, text; // Important to parse
+    // Header contains majorly all the tags
+    // Text also contains majorly all the tags
     String txt5, date1, fig, header, f;
     String[] h = new String[8];
 
-    public String getFig() {
-        return fig;
+    public FbisModel() {
+
     }
 
-    public void setFig(String fig) {
-        this.fig = fig;
+//    @Override
+//    public String toString() {
+//        return "FbisModel {" + "\n" +
+//                "docno="+ docno + "\n" +
+//                "txt5="+ txt5 + "\n" +
+//                "header="+ header + "\n" +
+//                "f="+ f + "\n" +
+//                "date1="+ date1 + "\n" +
+//                "}";
+//    }
+
+    public void setH(String h, int i) {
+        this.h[i] = h;
     }
 
     public String getH(int i) {
         return this.h[i];
     }
 
-    public void setH(String h, int i) {
-        this.h[i] = h;
-    }
-
     public String getDocno() {
-        return docno;
+        return this.docno;
     }
 
     public void setDocno(String docno) {
@@ -43,7 +51,7 @@ public class FbisModel {
     }
 
     public String getText() {
-        return text;
+        return this.text;
     }
 
     public void setText(String text) {
@@ -51,7 +59,7 @@ public class FbisModel {
     }
 
     public String getTxt5() {
-        return txt5;
+        return this.txt5;
     }
 
     public void setTxt5(String txt5) {
@@ -59,15 +67,23 @@ public class FbisModel {
     }
 
     public String getDate1() {
-        return date1;
+        return this.date1;
     }
 
     public void setDate1(String date1) {
         this.date1 = date1;
     }
 
+    public String getFig() {
+        return this.fig;
+    }
+
+    public void setFig(String fig) {
+        this.fig = fig;
+    }
+
     public String getHeader() {
-        return header;
+        return this.header;
     }
 
     public void setHeader(String header) {
@@ -75,7 +91,7 @@ public class FbisModel {
     }
 
     public String getF() {
-        return f;
+        return this.f;
     }
 
     public void setF(String f) {
