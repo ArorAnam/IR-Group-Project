@@ -22,9 +22,6 @@ public class FtParser {
         for (Element e : doc.select("DOC")) {
             ftModel = new FtModel();
             ftModel.setDocno(e.select("DOCNO").text());
-            ftModel.setDate(e.select("DATE").text());
-            ftModel.setPub(e.select("PUB").text());
-            ftModel.setPage(e.select("PAGE").text());
             ftModel.setText(e.select("TEXT").text());
             ftModel.setByline(e.select("BYLINE").text());
             ftModel.setDateline(e.select("DATELINE").text());

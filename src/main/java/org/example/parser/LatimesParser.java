@@ -20,17 +20,8 @@ public class LatimesParser {
         for (Element e : doc.select("DOC")) {
             latimesModel = new LatimesModel();
             latimesModel.setDocno(e.select("DOCNO").text());
-            latimesModel.setDocid(e.select("DOCID").text());
-            latimesModel.setDate(e.select("DATE").text());
-            latimesModel.setSection(e.select("SECTION").text());
-            latimesModel.setLength(e.select("LENGTH").text());
             latimesModel.setHeadline(e.select("HEADLINE").text());
-            latimesModel.setByline(e.select("BYLINE").text());
             latimesModel.setText(e.select("TEXT").text());
-            latimesModel.setGraphic(e.select("GRAPHIC").text());
-            latimesModel.setType(e.select("TYPE").text());
-            latimesModel.setCorrectionDate(e.select("CORRECTION-DATE").text());
-            latimesModel.setCorrection(e.select("CORRECTION").text());
             latimesDataList.add(latimesModel);
         }
     }

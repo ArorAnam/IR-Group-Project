@@ -28,20 +28,6 @@ public class FtIndexer {
         doc.add(new StringField("id", ftData.getDocno(), Field.Store.YES));
         doc.add(new TextField("title", ftData.getHeadline(), Field.Store.YES));
         doc.add(new TextField("content", ftData.getText(), Field.Store.YES));
-        doc.add(new TextField("date", ftData.getDate(), Field.Store.YES));
-
-        // Important and Unique
-        doc.add(new TextField("author", ftData.getByline(), Field.Store.YES));
-        doc.add(new TextField("pub", ftData.getPub(), Field.Store.YES));
-
-        // Not Important
-        doc.add(new TextField("profile", ftData.getProfile(), Field.Store.YES));
-        doc.add(new TextField("page", ftData.getPage(), Field.Store.YES));
-        doc.add(new TextField("dateline", ftData.getDateline(), Field.Store.YES));
-
-        String allContent = String.join(" ", ftData.getText(), ftData.getDate(), ftData.getByline(),
-                ftData.getPub(), ftData.getProfile(), ftData.getPage(), ftData.getDateline());
-        doc.add(new TextField("allContent", allContent, Field.Store.YES));
         return doc;
     }
 }
