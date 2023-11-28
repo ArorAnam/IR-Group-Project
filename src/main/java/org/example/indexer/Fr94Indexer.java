@@ -17,7 +17,6 @@ public class Fr94Indexer {
         Fr94Parser data = new Fr94Parser();
         ArrayList<Fr94Model> parsedData;
         try {
-
             parsedData = data.getData();
             for (int i = 0; i < parsedData.size(); i++)
                 fr94Documents.add(createDocument(parsedData.get(i)));

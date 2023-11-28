@@ -1,41 +1,78 @@
 package org.example.model;
 
-/*
-We are looking for these fields:
-Most Important:
-<TEXT> <DCONO>
-
-Others taken into consideration:
-<DATE1>
-<TXT5>
-<HEADER>
-<F ...>
- */
-
 public class FbisModel {
-    String docno, text;
-    // Header, Text contain majorly all the tags
+    String docno, text; // Important to parse
+    // Header contains majorly all the tags
+    // Text also contains majorly all the tags
     String txt5, date1, fig, header, f;
-    String[] h = new String[8];
 
-    public String getFig() {
-        return fig;
+    String h1, h2, h3, h4, h5, h6, h7, h8;
+
+    public String getH1() {
+        return h1;
     }
 
-    public void setFig(String fig) {
-        this.fig = fig;
+    public void setH1(String h1) {
+        this.h1 = h1;
     }
 
-    public String getH(int i) {
-        return this.h[i];
+    public String getH2() {
+        return h2;
     }
 
-    public void setH(String h, int i) {
-        this.h[i] = h;
+    public void setH2(String h2) {
+        this.h2 = h2;
     }
 
+    public String getH3() {
+        return h3;
+    }
+
+    public void setH3(String h3) {
+        this.h3 = h3;
+    }
+
+    public String getH4() {
+        return h4;
+    }
+
+    public void setH4(String h4) {
+        this.h4 = h4;
+    }
+
+    public String getH5() {
+        return h5;
+    }
+
+    public void setH5(String h5) {
+        this.h5 = h5;
+    }
+
+    public String getH6() {
+        return h6;
+    }
+
+    public void setH6(String h6) {
+        this.h6 = h6;
+    }
+
+    public String getH7() {
+        return h7;
+    }
+
+    public void setH7(String h7) {
+        this.h7 = h7;
+    }
+
+    public String getH8() {
+        return h8;
+    }
+
+    public void setH8(String h8) {
+        this.h8 = h8;
+    }
     public String getDocno() {
-        return docno;
+        return this.docno;
     }
 
     public void setDocno(String docno) {
@@ -43,7 +80,7 @@ public class FbisModel {
     }
 
     public String getText() {
-        return text;
+        return this.text;
     }
 
     public void setText(String text) {
@@ -51,7 +88,7 @@ public class FbisModel {
     }
 
     public String getTxt5() {
-        return txt5;
+        return this.txt5;
     }
 
     public void setTxt5(String txt5) {
@@ -59,15 +96,23 @@ public class FbisModel {
     }
 
     public String getDate1() {
-        return date1;
+        return this.date1;
     }
 
     public void setDate1(String date1) {
         this.date1 = date1;
     }
 
+    public String getFig() {
+        return this.fig;
+    }
+
+    public void setFig(String fig) {
+        this.fig = fig;
+    }
+
     public String getHeader() {
-        return header;
+        return this.header;
     }
 
     public void setHeader(String header) {
@@ -75,7 +120,7 @@ public class FbisModel {
     }
 
     public String getF() {
-        return f;
+        return this.f;
     }
 
     public void setF(String f) {

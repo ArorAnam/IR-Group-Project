@@ -1,13 +1,15 @@
 package org.example.parser;
 
-import org.example.model.FbisModel;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-
 import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
+
+import org.example.model.FbisModel;
+
+import org.jsoup.nodes.Element;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 public class FbisParser {
     private final static File FBIS_DIR = new File("dataset/fbis");
@@ -20,12 +22,6 @@ public class FbisParser {
         Document doc = Jsoup.parse(file, "UTF-8", "http://example.com/");
         for (Element e : doc.select("DOC")) {
             fbisModel = new FbisModel();
-            for (int i = 1; i <= 8; i ++ ) {
-                String hString = e.select("H" + i).text();
-                if (!hString.isEmpty()) {
-                    fbisModel.setH(hString, i-1);
-                }
-            }
             fbisModel.setDocno(e.select("DOCNO").text());
             fbisModel.setDate1(e.select("DATE1").text());
             fbisModel.setHeader(e.select("HEADER").text());
@@ -33,6 +29,14 @@ public class FbisParser {
             fbisModel.setF(e.select("F").text());
             fbisModel.setTxt5(e.select("TXT5").text());
             fbisModel.setText(e.select("TXT").text());
+            fbisModel.setH1(e.select("H1").text());
+            fbisModel.setH1(e.select("H2").text());
+            fbisModel.setH1(e.select("H3").text());
+            fbisModel.setH1(e.select("H4").text());
+            fbisModel.setH1(e.select("H5").text());
+            fbisModel.setH1(e.select("H6").text());
+            fbisModel.setH1(e.select("H7").text());
+            fbisModel.setH1(e.select("H8").text());
             fbisDataList.add(fbisModel);
         }
     }
@@ -50,5 +54,4 @@ public class FbisParser {
         parseAllFiles(FBIS_DIR.getAbsolutePath());
         return fbisDataList;
     }
-
 }
