@@ -19,13 +19,13 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) throws IOException, ParseException {
+
+    public static void main(String[] args) throws IOException, ParseException, java.text.ParseException {
         Analyzer analyzer = new EnglishAnalyzer();
         Similarity similarity = new BM25Similarity();
-        Indexer indexer = new Indexer();
-        indexer.Indexing(analyzer, similarity);
+        CustomerAnalyzer analyzer1 = new CustomerAnalyzer("SHORT", "BOTH");
 
-        SearchEngine se = new SearchEngine(analyzer, similarity);
+        SearchEngine se = new SearchEngine(analyzer1, similarity);
         se.search();
     }
 }
