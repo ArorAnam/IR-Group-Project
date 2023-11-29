@@ -25,9 +25,15 @@ public class FtIndexer {
     private Document createDocument(FtModel ftData) {
         Document doc = new Document();
         // Important
-        doc.add(new StringField("id", ftData.getDocno(), Field.Store.YES));
-        doc.add(new TextField("title", ftData.getHeadline(), Field.Store.YES));
-        doc.add(new TextField("content", ftData.getText(), Field.Store.YES));
+        doc.add(new StringField("docno", ftData.getDocno(), Field.Store.YES));
+        doc.add(new StringField("profile", ftData.getProfile(), Field.Store.YES));
+        doc.add(new StringField("date", ftData.getDate(), Field.Store.YES));
+        doc.add(new TextField("headline", ftData.getHeadline(), Field.Store.YES));
+        doc.add(new TextField("pub", ftData.getPub(), Field.Store.YES));
+        doc.add(new TextField("page", ftData.getPage(), Field.Store.YES));
+        doc.add(new TextField("byline", ftData.getByline(), Field.Store.YES));
+        doc.add(new TextField("dateline", ftData.getDateline(), Field.Store.YES));
+        doc.add(new TextField("text", ftData.getText(), Field.Store.YES));
         return doc;
     }
 }

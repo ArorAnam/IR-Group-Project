@@ -30,9 +30,13 @@ public class FbisIndexer {
     private Document createDocument(FbisModel fbisData) {
         Document doc = new Document();
         // Important
-        doc.add(new StringField("id", fbisData.getDocno(), Field.Store.YES));
-        doc.add(new TextField("title", fbisData.getHeader(), Field.Store.YES));
-        doc.add(new TextField("content", fbisData.getText(), Field.Store.YES));
+        doc.add(new StringField("docno", fbisData.getDocno(), Field.Store.YES));
+        doc.add(new StringField("ht", fbisData.getHt(), Field.Store.YES));
+        doc.add(new StringField("h2", fbisData.getH2(), Field.Store.YES));
+        doc.add(new StringField("date", fbisData.getDate1(), Field.Store.YES));
+        doc.add(new StringField("h3", fbisData.getH3(), Field.Store.YES));
+        doc.add(new TextField("headline", fbisData.getTi(), Field.Store.YES));
+        doc.add(new TextField("text", fbisData.getText(), Field.Store.YES));
         return doc;
     }
 }

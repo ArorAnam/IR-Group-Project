@@ -14,18 +14,19 @@ import org.apache.lucene.store.FSDirectory;
 import org.example.indexer.*;
 import org.example.parser.TopicParser;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Main {
-
-    public static void main(String[] args) throws IOException, ParseException, java.text.ParseException {
+    public static void main(String[] args) throws ParseException, IOException, java.text.ParseException {
         Analyzer analyzer = new EnglishAnalyzer();
         Similarity similarity = new BM25Similarity();
-        CustomerAnalyzer analyzer1 = new CustomerAnalyzer("SHORT", "BOTH");
-
-        SearchEngine se = new SearchEngine(analyzer1, similarity);
-        se.search();
+        CustomAnalyzer analyzer1 = new CustomAnalyzer();
+        Searcher.executeQueries(analyzer1, similarity);
     }
 }

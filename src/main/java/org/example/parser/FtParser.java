@@ -27,6 +27,9 @@ public class FtParser {
             ftModel.setDateline(e.select("DATELINE").text());
             ftModel.setHeadline(e.select("HEADLINE").text());
             ftModel.setProfile(e.select("PROFILE").text());
+            ftModel.setPub(e.select("PUB").text());
+            ftModel.setPage(e.select("PAGE").text());
+            ftModel.setDate(e.select("DATE").text());
             ftDataList.add(ftModel);
         }
     }

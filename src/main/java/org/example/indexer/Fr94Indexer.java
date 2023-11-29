@@ -28,9 +28,9 @@ public class Fr94Indexer {
     private Document createDocument(Fr94Model fr94Data) {
         Document doc = new Document();
         // Important
-        doc.add(new StringField("id", fr94Data.getDocno(), Field.Store.YES));
-        doc.add(new TextField("title", fr94Data.getDoctitle(), Field.Store.YES));
-        doc.add(new TextField("content", fr94Data.getText(), Field.Store.YES));
+        doc.add(new StringField("docno", fr94Data.getDocno(), Field.Store.YES));
+        doc.add(new TextField("text", fr94Data.getText(), Field.Store.YES));
+        doc.add(new TextField("headline", fr94Data.getDoctitle(), Field.Store.YES));
 
         return doc;
     }

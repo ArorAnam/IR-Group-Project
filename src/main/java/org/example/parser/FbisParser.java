@@ -23,8 +23,12 @@ public class FbisParser {
         for (Element e : doc.select("DOC")) {
             fbisModel = new FbisModel();
             fbisModel.setDocno(e.select("DOCNO").text());
-            fbisModel.setHeader(e.select("HEADER").text());
-            fbisModel.setText(e.select("TXT").text());
+            fbisModel.setHt(e.select("HT").text());
+            fbisModel.setH2(e.select("H2").text());
+            fbisModel.setDate1(e.select("DATE1").text());
+            fbisModel.setH3(e.select("H3").text());
+            fbisModel.setTi(e.select("TI").text());
+            fbisModel.setText(e.select("TEXT").text());
             fbisDataList.add(fbisModel);
         }
     }

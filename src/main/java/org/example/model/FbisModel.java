@@ -1,12 +1,28 @@
 package org.example.model;
 
 public class FbisModel {
-    String docno, text; // Important to parse
+    String docno, text, h2, h3, date1, ht, ti; // Important to parse
     // Header contains majorly all the tags
     // Text also contains majorly all the tags
-    String txt5, date1, fig, header, f;
+    String txt5, fig, header, f;
 
-    String h1, h2, h3, h4, h5, h6, h7, h8;
+    String h1, h4, h5, h6, h7, h8;
+
+    public String getHt() {
+        return ht;
+    }
+
+    public void setHt(String ht) {
+        this.ht = ht;
+    }
+
+    public String getTi() {
+        return ti;
+    }
+
+    public void setTi(String ti) {
+        this.ti = ti;
+    }
 
     public String getH1() {
         return h1;

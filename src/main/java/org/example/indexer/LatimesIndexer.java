@@ -27,9 +27,9 @@ public class LatimesIndexer {
     private Document createDocument(LatimesModel latimesData) {
         Document doc = new Document();
         // Important
-        doc.add(new StringField("id", latimesData.getDocno(), Field.Store.YES));
-        doc.add(new TextField("title", latimesData.getHeadline(), Field.Store.YES));
-        doc.add(new TextField("content", latimesData.getText(), Field.Store.YES));
+        doc.add(new StringField("docno", latimesData.getDocno(), Field.Store.YES));
+        doc.add(new TextField("headline", latimesData.getHeadline(), Field.Store.YES));
+        doc.add(new TextField("text", latimesData.getText(), Field.Store.YES));
         return doc;
     }
 }
