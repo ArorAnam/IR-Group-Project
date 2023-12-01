@@ -1,11 +1,9 @@
 package org.example.model;
 
 public class LatimesModel {
-    String docno, docid, date, text; // Important to parse
-    // Header contains majorly all the tags
-    // Text also contains majorly all the tags
-    String section, length, headline, byline, graphic, type,
-            subject, correctionDate, correction;
+    String docno, docid, date, text;
+
+    String section, length, headline, byline, graphic, type, correctionDate, correction;
 
     public String getDocno() {
         return this.docno;

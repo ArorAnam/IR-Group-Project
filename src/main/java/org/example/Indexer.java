@@ -11,7 +11,6 @@ import org.example.indexer.FbisIndexer;
 import org.example.indexer.Fr94Indexer;
 import org.example.indexer.FtIndexer;
 import org.example.indexer.LatimesIndexer;
-
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -30,14 +29,11 @@ public class Indexer {
 
         Directory directory;
         directory = FSDirectory.open(Paths.get("index/"));
-        // Configure the index writer
         IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
         iwc.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
-        // use the similarity_chosen
         iwc.setSimilarity(similarity);
 
         IndexWriter indexWriter = new IndexWriter(directory, iwc);
-        //Add the documents parsed from the dataset into the indexWriter
         indexWriter.addDocuments(fbisDocument);
         System.out.println("Fbis is done");
         indexWriter.addDocuments(fr94Document);

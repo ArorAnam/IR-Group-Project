@@ -21,7 +21,7 @@ public class TopicParser {
         String fieldType = "";
         StringBuilder readString = new StringBuilder();
         for (String line : fileData) {
-            if (line.length() > 0) {
+            if (!line.isEmpty()) {
                 if (line.charAt(0) == '<') {
                     String newFieldType = line.substring(1, line.indexOf('>'));
                     switch (newFieldType) {

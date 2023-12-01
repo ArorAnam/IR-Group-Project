@@ -2,8 +2,6 @@ package org.example.model;
 
 public class FbisModel {
     String docno, text, h2, h3, date1, ht, ti; // Important to parse
-    // Header contains majorly all the tags
-    // Text also contains majorly all the tags
     String txt5, fig, header, f;
 
     String h1, h4, h5, h6, h7, h8;

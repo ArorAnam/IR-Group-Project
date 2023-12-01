@@ -9,16 +9,17 @@ import org.example.parser.LatimesParser;
 import org.example.model.LatimesModel;
 
 public class LatimesIndexer {
-    private static ArrayList<Document> latimesDocuments = new ArrayList<>();
+    private static final ArrayList<Document> latimesDocuments = new ArrayList<>();
 
     public ArrayList<Document> getDocuments() {
         LatimesParser data = new LatimesParser();
         ArrayList<LatimesModel> parsedData;
         try {
             parsedData = data.getData();
-            for (int i = 0; i < parsedData.size(); i++)
-                latimesDocuments.add(createDocument(parsedData.get(i)));
-        } catch (Exception e) {
+            for (LatimesModel parsedDatum : parsedData) {
+                latimesDocuments.add(createDocument(parsedDatum));
+            }
+        } catch (Exception ignored) {
         }
 
         return latimesDocuments;
@@ -26,7 +27,6 @@ public class LatimesIndexer {
 
     private Document createDocument(LatimesModel latimesData) {
         Document doc = new Document();
-        // Important
         doc.add(new StringField("docno", latimesData.getDocno(), Field.Store.YES));
         doc.add(new TextField("headline", latimesData.getHeadline(), Field.Store.YES));
         doc.add(new TextField("text", latimesData.getText(), Field.Store.YES));

@@ -1,9 +1,7 @@
 package org.example.model;
 
 public class FtModel {
-    String date, pub, docno, text; // Important to parse
-    // Header contains majorly all the tags
-    // Text also contains majorly all the tags
+    String date, pub, docno, text;
     String page, byline, headline, dateline, profile;
 
     public String getDate() {

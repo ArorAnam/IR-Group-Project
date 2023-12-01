@@ -1,26 +1,20 @@
 package org.example.parser;
 
 import java.io.File;
-
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-
 import org.jsoup.nodes.Element;
-
 import org.example.model.Fr94Model;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 public class Fr94Parser {
     private final static File FR94_DIR = new File("dataset/fr94");
 
-    private static ArrayList<Fr94Model> fr94DataList = new ArrayList<>();
+    private static final ArrayList<Fr94Model> fr94DataList = new ArrayList<>();
 
     private static void parseFile(String parseDoc) throws IOException {
-        Fr94Model fr94Model = new Fr94Model();
+        Fr94Model fr94Model;
         File file = new File(parseDoc);
         Document doc = Jsoup.parse(file, "UTF-8", "http://example.com/");
         for (Element e : doc.select("DOC")) {

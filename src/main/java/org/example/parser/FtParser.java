@@ -13,7 +13,7 @@ import org.jsoup.nodes.Document;
 public class FtParser {
     private final static File FT_DIR = new File("dataset/ft");
 
-    private static ArrayList<FtModel> ftDataList = new ArrayList<>();
+    private static final ArrayList<FtModel> ftDataList = new ArrayList<>();
 
     private static void parseFile(String parseDoc) throws IOException {
         FtModel ftModel = null;

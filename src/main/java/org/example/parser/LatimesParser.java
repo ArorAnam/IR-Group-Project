@@ -14,7 +14,7 @@ public class LatimesParser {
     private static ArrayList<LatimesModel> latimesDataList = new ArrayList<>();
 
     private static void parseFile(String parseDoc) throws IOException {
-        LatimesModel latimesModel = null;
+        LatimesModel latimesModel;
         File file = new File(parseDoc);
         Document doc = Jsoup.parse(file, "UTF-8", "http://example.com/");
         for (Element e : doc.select("DOC")) {

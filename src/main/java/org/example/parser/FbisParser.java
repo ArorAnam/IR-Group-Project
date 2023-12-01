@@ -1,12 +1,9 @@
 package org.example.parser;
 
 import java.io.File;
-
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.example.model.FbisModel;
-
 import org.jsoup.nodes.Element;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -14,10 +11,10 @@ import org.jsoup.nodes.Document;
 public class FbisParser {
     private final static File FBIS_DIR = new File("dataset/fbis");
 
-    private static ArrayList<FbisModel> fbisDataList = new ArrayList<>();
+    private static final ArrayList<FbisModel> fbisDataList = new ArrayList<>();
 
     private static void parseFile(String parseDoc) throws IOException {
-        FbisModel fbisModel = null;
+        FbisModel fbisModel;
         File file = new File(parseDoc);
         Document doc = Jsoup.parse(file, "UTF-8", "http://example.com/");
         for (Element e : doc.select("DOC")) {

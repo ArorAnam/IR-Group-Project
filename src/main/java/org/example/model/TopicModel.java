@@ -6,13 +6,6 @@ public class TopicModel {
     private String description;
     private String narrative;
 
-    public TopicModel(int number, String title, String description, String narrative) {
-        this.number = number;
-        this.title = title;
-        this.description = description;
-        this.narrative = narrative;
-    }
-
     public TopicModel() {}
 
     @Override

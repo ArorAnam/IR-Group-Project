@@ -1,9 +1,7 @@
 package org.example.model;
 
 public class Fr94Model {
-    String date, fr, docno, text; // Important to parse
-    // Header contains majorly all the tags
-    // Text also contains majorly all the tags
+    String date, fr, docno, text;
     String footcite, cfrno, rindock, usDept, usBureau, imports,
             doctitle, agency, action, summary, address, further, supplem,
             signer, signjob, frFiling, billing, footnote, footname;
